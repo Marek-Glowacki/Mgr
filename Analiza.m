@@ -1,17 +1,11 @@
- clc
+clc
 clear all
-%% CSVRead
-filename = 'data.csv';
-Data = csvread(filename);
-%% Podzia³ danych
-Sample = Data(:,1);
-Noise = Data(:,2);
-Desired = Data(:,3);
-Anoise = Data(:,4);
-Error = Data(:,5);
-%% Plot w Signal Analyzer
-signalAnalyzer(Error)
-
-%% Soundsc
-% fs = 8000;
-% soundsc(Error,fs);
+%% A weighting
+W = csvread('data.csv');
+N = W(:,1);
+xh = W(:,2);
+x = W(:,3);
+xs = W(:,4);
+e = W(:,5);
+eh = W(:,6);
+y = W(:,7);
